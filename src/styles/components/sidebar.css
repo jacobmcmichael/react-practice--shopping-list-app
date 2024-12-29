@@ -7,10 +7,21 @@
 #Sidebar .inner {
 	display: flex;
 	flex-direction: column;
+	height: 100%;
+}
+
+#Sidebar #AddItemForm {
+	flex: 1;
 }
 
 #Sidebar #AddItemForm,
 #Sidebar .form__group {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+#Sidebar .footer {
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;

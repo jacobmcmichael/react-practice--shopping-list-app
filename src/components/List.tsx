@@ -25,6 +25,15 @@ const data = [
 ];
 
 export default function List() {
+	const handleCheckboxClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+		const currentTarget: HTMLDivElement = event.currentTarget;
+		const checkbox: HTMLInputElement | null = currentTarget.querySelector('input[type="checkbox"]');
+
+		if (checkbox) {
+			checkbox.checked = !checkbox.checked;
+		}
+	};
+
 	return (
 		<section id="List">
 			<div className="inner">
@@ -34,6 +43,7 @@ export default function List() {
 							<div
 								key={item.id}
 								className="form__group"
+								onClick={(event) => handleCheckboxClick(event)}
 							>
 								<label htmlFor={item.name}>{item.name}</label>
 								<input
