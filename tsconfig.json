@@ -1,11 +1,19 @@
 {
 	"compilerOptions": {
-		"baseUrl": "./src",
+		"composite": true,
+		"outDir": "./dist",
+		"rootDir": "./src",
+		"strict": true,
+		"module": "ESNext",
+		"moduleResolution": "Node",
+		"target": "ESNext",
+		"jsx": "react-jsx",
+		"baseUrl": "./",
 		"paths": {
-			"@styles/*": ["/styles/*"],
-			"@components/*": ["/components/*"]
+			"@styles/*": ["src/styles/*"],
+			"@components/*": ["src/components/*"]
 		}
 	},
-	"files": [],
+	"include": ["src/**/*.ts", "src/**/*.tsx"],
 	"references": [{ "path": "./tsconfig.app.json" }, { "path": "./tsconfig.node.json" }]
 }
