@@ -1,9 +1,9 @@
 /* Styles */
-import "@app/styles/app.css";
+import "@styles/components/app.css";
 
 /* Components */
-import Header from "@app/components/Header";
-import Window from "@app/components/Window";
+import Header from "@components/Header";
+import Window from "@components/Window";
 
 export default function App() {
 	return (

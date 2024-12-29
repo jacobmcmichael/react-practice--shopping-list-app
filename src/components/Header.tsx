@@ -1,5 +1,5 @@
 /* Styles */
-import "@styles/header.css";
+import "@styles/components/header.css";
 
 export default function Header() {
 	return (
@@ -11,7 +11,9 @@ export default function Header() {
 					<span className="decoration"></span>
 				</div>
 
-				<div className="header__status"></div>
+				<div className="header__status">
+					<span>Items Obtained: 1 / 10</span>
+				</div>
 			</div>
 		</header>
 	);

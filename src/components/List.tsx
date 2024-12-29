@@ -1,5 +1,5 @@
 /* Styles */
-import "@styles/list.css";
+import "@styles/components/list.css";
 
 const data = [
 	{

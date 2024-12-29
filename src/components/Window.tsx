@@ -1,9 +1,9 @@
 /* Styles */
-import "@styles/window.css";
+import "@styles/components/window.css";
 
 /* Components */
-import List from "@app/components/List";
-import Sidebar from "@app/components/Sidebar";
+import List from "@components/List";
+import Sidebar from "@components/Sidebar";
 
 export default function Window() {
 	return (

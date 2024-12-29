@@ -1,9 +1,21 @@
 /* Styles */
-import "@styles/sidebar.css";
+import "@styles/components/sidebar.css";
 
 /* Components */
-import Button from "@app/components/shared/Button";
+import Button from "@components/shared/Button";
 import { useRef } from "react";
+
+const footerButtons = [
+	{
+		text: "Mark All Complete",
+	},
+	{
+		text: "Mark All Incomplete",
+	},
+	{
+		text: "Clear All",
+	},
+];
 
 export default function Sidebar() {
 	const newItemRef = useRef<HTMLInputElement>(null);
@@ -17,7 +29,9 @@ export default function Sidebar() {
 	return (
 		<aside id="Sidebar">
 			<div className="inner">
-				<h2>Add an Item</h2>
+				<div className="header">
+					<h2>Add an Item</h2>
+				</div>
 
 				<form
 					id="AddItemForm"
@@ -43,6 +57,17 @@ export default function Sidebar() {
 						Add to list
 					</Button>
 				</form>
+
+				<div className="footer">
+					{footerButtons.map((button, index) => (
+						<Button
+							key={index}
+							variant="secondary"
+						>
+							{button.text}
+						</Button>
+					))}
+				</div>
 			</div>
 		</aside>
 	);

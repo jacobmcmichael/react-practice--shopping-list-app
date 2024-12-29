@@ -17,34 +17,3 @@ h1,
 h2 {
 	font-weight: 600;
 }
-
-/* Button */
-button {
-	display: inline-block;
-	width: 100%;
-
-	padding: 0.8rem 1.2rem;
-
-	font-size: 1.125rem;
-	font-weight: 700;
-	text-align: center;
-	letter-spacing: 0.02em;
-
-	color: var(--button-text-color);
-
-	border: none;
-	border-radius: 6px;
-}
-
-button:hover {
-	opacity: 0.9;
-	cursor: pointer;
-}
-
-.button--primary {
-	background-color: var(--button-primary-background-color);
-}
-
-.button--secondary {
-	background-color: var(--button-secondary-background-color);
-}

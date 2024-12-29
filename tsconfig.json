@@ -3,8 +3,9 @@
 		"baseUrl": "./src/",
 		"paths": {
 			"@app/*": ["*"],
-			"@components/*": ["components/*"],
-			"@styles/*": ["styles/*"]
+			"@types/*": ["types/*"],
+			"@styles/*": ["styles/*"],
+			"@components/*": ["components/*"]
 		}
 	},
 	"files": [],
