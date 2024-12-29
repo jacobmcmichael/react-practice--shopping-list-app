@@ -3,8 +3,8 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
 /* Components */
-import Layout from "./layout";
-import App from "./components/App";
+import Layout from "@app/layout";
+import App from "@components/App";
 
 createRoot(document.getElementById("root")!).render(
 	<StrictMode>
