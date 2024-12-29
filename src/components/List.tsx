@@ -1,5 +1,8 @@
+/* Dependencies */
+import { useEffect, useState } from "react";
+
 /* Types */
-import { ListItemType } from "@app/types/components";
+import { ListItemType, ListItemProps } from "@app/types/components";
 
 /* Styles */
 import "@styles/components/list.css";
@@ -32,7 +35,9 @@ const data = [
 	},
 ];
 
-function ListItem(item: ListItemType) {
+function ListItem(props: ListItemProps) {
+	const { item, setListItems } = props;
+
 	const handleCheckboxClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
 		const currentTarget: HTMLDivElement = event.currentTarget;
 		const checkbox: HTMLInputElement | null = currentTarget.querySelector('input[type="checkbox"]');
@@ -42,12 +47,27 @@ function ListItem(item: ListItemType) {
 		}
 	};
 
+	const handleDeleteItem = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+		const currentTarget: HTMLButtonElement = event.currentTarget;
+		const listItem: HTMLElement | null = currentTarget.parentElement;
+
+		if (listItem) {
+			setListItems((prevItems: ListItemType[]) => prevItems.filter((prevItem) => prevItem.id !== item.id));
+		}
+	};
+
 	return (
 		<div
-			key={item.id}
 			className="form__group"
 			onClick={(event) => handleCheckboxClick(event)}
 		>
+			<button
+				className="form__action"
+				onClick={(event) => handleDeleteItem(event)}
+			>
+				❌
+			</button>
+
 			<label htmlFor={item.name}>{item.name}</label>
 			<input
 				id={item.name}
@@ -60,10 +80,25 @@ function ListItem(item: ListItemType) {
 }
 
 export default function List() {
+	const [listItems, setListItems] = useState<ListItemType[]>(data);
+
+	useEffect(() => {
+		console.log(listItems);
+	}, [listItems]);
+
 	return (
 		<section id="List">
 			<div className="inner">
-				<form id="ShoppingListForm">{data.length > 0 && data.map((item) => <ListItem {...item} />)}</form>
+				<form id="ShoppingListForm">
+					{listItems.length > 0 &&
+						listItems.map((item) => (
+							<ListItem
+								key={item.id}
+								item={item}
+								setListItems={setListItems}
+							/>
+						))}
+				</form>
 			</div>
 		</section>
 	);

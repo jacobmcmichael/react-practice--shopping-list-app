@@ -1,5 +1,5 @@
 /* Button */
-button {
+.button {
 	display: inline-block;
 	width: 100%;
 
@@ -18,7 +18,7 @@ button {
 	cursor: pointer;
 }
 
-button:hover {
+.button:hover {
 	opacity: 0.9;
 }
 

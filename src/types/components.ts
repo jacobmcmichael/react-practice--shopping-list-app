@@ -6,6 +6,11 @@ export type ListItemType = {
 	checked: boolean;
 };
 
+export interface ListItemProps {
+	item: ListItemType;
+	setListItems: React.Dispatch<React.SetStateAction<ListItemType[]>>;
+}
+
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	variant: "primary" | "secondary";
 }
