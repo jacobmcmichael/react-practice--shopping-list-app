@@ -1,0 +1,10 @@
+#root {
+	--border-color: rgba(0, 0, 0, 0.05);
+
+	width: 100vw;
+	height: 100vh;
+}
+
+.inner {
+	padding: 0 2rem;
+}

@@ -1,0 +1,24 @@
+#Header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	height: 60px;
+
+	background-color: rgba(255, 235, 205, 0.2);
+}
+
+#Header .header__decoration {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+#Header .decoration {
+	width: 16px;
+	height: 16px;
+
+	border-radius: 100%;
+	background-color: lightgray;
+}

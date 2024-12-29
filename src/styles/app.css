@@ -1,0 +1,14 @@
+#App {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: stretch;
+
+	width: 80%;
+	height: 80%;
+
+	border-radius: 16px;
+	border: 1px solid var(--border-color);
+	background-color: whitesmoke;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
