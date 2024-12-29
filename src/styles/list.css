@@ -1,0 +1,30 @@
+#List {
+	flex: 3;
+
+	background-color: var(--list-background-color);
+}
+
+#List .inner {
+	padding: 1.5rem 0;
+}
+
+#List .list__group {
+	padding-inline-start: 0;
+	list-style-type: none;
+}
+
+#List #ShoppingListForm {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex: 1;
+}
+
+#List .form__group {
+	display: flex;
+	flex-direction: row-reverse;
+	gap: 0.5rem;
+
+	padding: 0.5rem 2rem;
+}
