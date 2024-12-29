@@ -1,0 +1,17 @@
+#Sidebar {
+	flex: 1.5;
+
+	background-color: var(--sidebar-background-color);
+}
+
+#Sidebar .inner {
+	display: flex;
+	flex-direction: column;
+}
+
+#Sidebar #AddItemForm,
+#Sidebar .form__group {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}

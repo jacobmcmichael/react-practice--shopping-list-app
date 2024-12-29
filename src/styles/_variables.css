@@ -1,0 +1,22 @@
+:root {
+	/* Layout */
+	--layout-background-color: #d8c4b6;
+
+	/* App */
+	--app-background-color: #f5efe7;
+	--app-border-color: rgba(0, 0, 0, 0.05);
+
+	/* Header */
+	--header-background-color: #f8fafc;
+
+	/* List */
+	--list-background-color: #fefefe;
+
+	/* Sidebar */
+	--sidebar-background-color: #f5efe7;
+
+	/* Button */
+	--button-text-color: #fefefe;
+	--button-primary-background-color: #3e5879;
+	--button-secondary-background-color: #213555;
+}

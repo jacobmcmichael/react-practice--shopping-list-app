@@ -1,0 +1,10 @@
+#Window {
+	display: flex;
+	flex: 1;
+
+	border-top: 1px solid var(--border-color);
+}
+
+#Window .inner {
+	display: flex;
+}

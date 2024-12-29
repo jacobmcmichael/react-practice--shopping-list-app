@@ -1,0 +1,22 @@
+#Header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	background-color: var(--header-background-color);
+}
+
+#Header .header__decoration {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+#Header .decoration {
+	width: 16px;
+	height: 16px;
+
+	border-radius: 100%;
+	background-color: lightgray;
+}
