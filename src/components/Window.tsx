@@ -1,5 +1,5 @@
 /* Dependencies */
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
 /* Types */
 import { ListItemType } from "@app/types/components";
@@ -16,7 +16,6 @@ import { initialListData } from "@constants/components";
 
 export default function Window() {
 	const [listItems, setListItems] = useState<ListItemType[]>(initialListData);
-	const memoizedListData = useMemo(() => listItems, [listItems]);
 
 	useEffect(() => {
 		setListItems((prevItems: ListItemType[]) => {
@@ -29,8 +28,8 @@ export default function Window() {
 	}, [setListItems]);
 
 	useEffect(() => {
-		console.log(memoizedListData);
-	}, [memoizedListData]);
+		console.log(listItems);
+	}, [listItems]);
 
 	return (
 		<main id="Window">
