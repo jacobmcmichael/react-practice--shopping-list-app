@@ -10,6 +10,18 @@ import "@styles/components/list.css";
 function ListItem(props: ListItemProps) {
 	const { item, setListItems } = props;
 
+	const handleCheckboxChange = () => {
+		setListItems((prevItems: ListItemType[]) =>
+			prevItems.map((prevItem) => {
+				if (prevItem.id === item.id) {
+					return { ...prevItem, checked: !prevItem.checked };
+				}
+
+				return prevItem;
+			}),
+		);
+	};
+
 	const handleDeleteItem = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
 		const button: HTMLButtonElement = event.currentTarget;
 		const listItem: HTMLElement | null = button.parentElement;
@@ -34,6 +46,7 @@ function ListItem(props: ListItemProps) {
 				type="checkbox"
 				name={item.name}
 				defaultChecked={item.checked}
+				onChange={handleCheckboxChange}
 			/>
 		</div>
 	);
