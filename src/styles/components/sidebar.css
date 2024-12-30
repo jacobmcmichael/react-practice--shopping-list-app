@@ -1,12 +1,13 @@
 #Sidebar {
 	flex: 1.5;
-
 	background-color: var(--sidebar-background-color);
 }
 
 #Sidebar .inner {
 	display: flex;
 	flex-direction: column;
+	gap: 0.5rem;
+
 	height: 100%;
 }
 
@@ -25,4 +26,16 @@
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
+}
+
+#Sidebar input[type="text"] {
+	padding: 0.5rem 0.8rem;
+
+	border: 1px solid var(--app-border-color);
+	border-radius: 0.25rem;
+}
+
+#Sidebar input[type="text"]::placeholder {
+	color: var(--input-placeholder-color);
+	font-style: italic;
 }

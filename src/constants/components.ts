@@ -2,7 +2,7 @@ export const initialListData = [
 	{
 		id: 1,
 		name: "Item 1",
-		checked: false,
+		checked: true,
 	},
 	{
 		id: 2,

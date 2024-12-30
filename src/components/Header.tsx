@@ -1,7 +1,12 @@
+/* Types */
+import { HeaderProps } from "types/components";
+
 /* Styles */
 import "@styles/components/header.css";
 
-export default function Header() {
+export default function Header(props: HeaderProps) {
+	const { listItems } = props;
+
 	return (
 		<header id="Header">
 			<div className="inner">
@@ -12,7 +17,7 @@ export default function Header() {
 				</div>
 
 				<div className="header__status">
-					<span>Completed: 1 / 10</span>
+					<span>{`Completed: ${listItems.filter((item) => item.checked).length} / ${listItems.length}`}</span>
 				</div>
 			</div>
 		</header>

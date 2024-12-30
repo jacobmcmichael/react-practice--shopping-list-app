@@ -67,14 +67,19 @@ export default function Sidebar(props: SidebarProps) {
 					onSubmit={handleFormSubmit}
 				>
 					<div className="form__group">
-						<label htmlFor="NewItem"></label>
+						<label
+							className="sr-only"
+							htmlFor="NewItem"
+						>
+							Add Item
+						</label>
 						<input
 							ref={inputRef}
 							id="NewItem"
 							type="text"
 							name="item"
-							placeholder="Milk"
-							defaultValue="hello"
+							placeholder="Peanut butter..."
+							required
 						/>
 					</div>
 

@@ -20,6 +20,15 @@ export interface SidebarProps {
 	setListItems: React.Dispatch<React.SetStateAction<ListItemType[]>>;
 }
 
+export interface HeaderProps {
+	listItems: ListItemType[];
+}
+
+export interface WindowProps {
+	listItems: ListItemType[];
+	setListItems: React.Dispatch<React.SetStateAction<ListItemType[]>>;
+}
+
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	variant: "primary" | "secondary" | "danger";
 }
