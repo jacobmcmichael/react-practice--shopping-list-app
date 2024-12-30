@@ -1,29 +1,27 @@
+/* Dependencies */
+import { useRef } from "react";
+
+/* Types */
+import { SidebarProps } from "types/components";
+
 /* Styles */
 import "@styles/components/sidebar.css";
 
 /* Components */
 import Button from "@components/shared/Button";
-import { useRef } from "react";
 
-const footerButtons = [
-	{
-		text: "Mark All Complete",
-	},
-	{
-		text: "Mark All Incomplete",
-	},
-	{
-		text: "Clear All",
-	},
-];
+/* Constants */
+import { sidebarFooterButtons } from "@constants/components";
 
-export default function Sidebar() {
-	const newItemRef = useRef<HTMLInputElement>(null);
+export default function Sidebar(props: SidebarProps) {
+	const { handleAddItem } = props;
+
+	const inputRef = useRef<HTMLInputElement>(null);
 
 	const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 
-		if (newItemRef.current) console.log(newItemRef.current.value);
+		if (inputRef.current) handleAddItem({ id: 0, name: inputRef.current.value, checked: false });
 	};
 
 	return (
@@ -41,7 +39,7 @@ export default function Sidebar() {
 					<div className="form__group">
 						<label htmlFor="NewItem"></label>
 						<input
-							ref={newItemRef}
+							ref={inputRef}
 							id="NewItem"
 							type="text"
 							name="item"
@@ -59,7 +57,7 @@ export default function Sidebar() {
 				</form>
 
 				<div className="footer">
-					{footerButtons.map((button, index) => (
+					{sidebarFooterButtons.map((button, index) => (
 						<Button
 							key={index}
 							variant="secondary"

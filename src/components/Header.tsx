@@ -12,7 +12,7 @@ export default function Header() {
 				</div>
 
 				<div className="header__status">
-					<span>Items Obtained: 1 / 10</span>
+					<span>Completed: 1 / 10</span>
 				</div>
 			</div>
 		</header>

@@ -2,54 +2,17 @@
 import { useEffect, useState } from "react";
 
 /* Types */
-import { ListItemType, ListItemProps } from "@app/types/components";
+import { ListItemType, ListItemProps, ListProps } from "@app/types/components";
 
 /* Styles */
 import "@styles/components/list.css";
 
-const data = [
-	{
-		id: 1,
-		name: "Item 1",
-		checked: false,
-	},
-	{
-		id: 2,
-		name: "Item 2",
-		checked: false,
-	},
-	{
-		id: 3,
-		name: "Item 3",
-		checked: false,
-	},
-	{
-		id: 4,
-		name: "Item 4",
-		checked: false,
-	},
-	{
-		id: 5,
-		name: "Item 5",
-		checked: false,
-	},
-];
-
 function ListItem(props: ListItemProps) {
 	const { item, setListItems } = props;
 
-	const handleCheckboxClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-		const currentTarget: HTMLDivElement = event.currentTarget;
-		const checkbox: HTMLInputElement | null = currentTarget.querySelector('input[type="checkbox"]');
-
-		if (checkbox) {
-			checkbox.checked = !checkbox.checked;
-		}
-	};
-
 	const handleDeleteItem = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-		const currentTarget: HTMLButtonElement = event.currentTarget;
-		const listItem: HTMLElement | null = currentTarget.parentElement;
+		const button: HTMLButtonElement = event.currentTarget;
+		const listItem: HTMLElement | null = button.parentElement;
 
 		if (listItem) {
 			setListItems((prevItems: ListItemType[]) => prevItems.filter((prevItem) => prevItem.id !== item.id));
@@ -57,10 +20,7 @@ function ListItem(props: ListItemProps) {
 	};
 
 	return (
-		<div
-			className="form__group"
-			onClick={(event) => handleCheckboxClick(event)}
-		>
+		<div className="form__group">
 			<button
 				className="form__action"
 				onClick={(event) => handleDeleteItem(event)}
@@ -79,12 +39,8 @@ function ListItem(props: ListItemProps) {
 	);
 }
 
-export default function List() {
-	const [listItems, setListItems] = useState<ListItemType[]>(data);
-
-	useEffect(() => {
-		console.log(listItems);
-	}, [listItems]);
+export default function List(props: ListProps) {
+	const { listItems, setListItems } = props;
 
 	return (
 		<section id="List">
