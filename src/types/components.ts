@@ -17,9 +17,9 @@ export interface ListProps {
 }
 
 export interface SidebarProps {
-	handleAddItem: (item: ListItemType) => void;
+	setListItems: React.Dispatch<React.SetStateAction<ListItemType[]>>;
 }
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-	variant: "primary" | "secondary";
+	variant: "primary" | "secondary" | "danger";
 }

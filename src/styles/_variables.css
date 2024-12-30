@@ -16,7 +16,11 @@
 	--sidebar-background-color: #f5efe7;
 
 	/* Button */
-	--button-text-color: #fefefe;
+	--button-primary-text-color: #fefefe;
+	--button-secondary-text-color: #fefefe;
+	--button-danger-text-color: #fefefe;
+
 	--button-primary-background-color: #3e5879;
-	--button-secondary-background-color: #213555;
+	--button-secondary-background-color: #3e5879;
+	--button-danger-background-color: #c96868;
 }

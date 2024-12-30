@@ -25,15 +25,3 @@ export const initialListData = [
 		checked: false,
 	},
 ];
-
-export const sidebarFooterButtons = [
-	{
-		text: "Mark All Complete",
-	},
-	{
-		text: "Mark All Incomplete",
-	},
-	{
-		text: "Clear All",
-	},
-];

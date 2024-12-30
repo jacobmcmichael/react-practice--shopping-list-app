@@ -10,18 +10,48 @@ import "@styles/components/sidebar.css";
 /* Components */
 import Button from "@components/shared/Button";
 
-/* Constants */
-import { sidebarFooterButtons } from "@constants/components";
-
 export default function Sidebar(props: SidebarProps) {
-	const { handleAddItem } = props;
+	const { setListItems } = props;
 
 	const inputRef = useRef<HTMLInputElement>(null);
+
+	const handleMarkAllCompleted = () => {
+		setListItems((prevItems) => {
+			return prevItems.map((prevItem) => {
+				return { ...prevItem, checked: true };
+			});
+		});
+	};
+
+	const handleDeleteSelected = () => {
+		setListItems((prevItems) => {
+			return prevItems.filter((prevItem) => !prevItem.checked);
+		});
+	};
+
+	const handleClearList = () => {
+		setListItems([]);
+	};
 
 	const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 
-		if (inputRef.current) handleAddItem({ id: 0, name: inputRef.current.value, checked: false });
+		if (inputRef.current) {
+			const newItem = inputRef.current.value;
+
+			if (newItem) {
+				setListItems((prevItems) => [
+					...prevItems,
+					{
+						id: prevItems.length + 1,
+						name: newItem,
+						checked: false,
+					},
+				]);
+
+				inputRef.current.value = "";
+			}
+		}
 	};
 
 	return (
@@ -57,14 +87,26 @@ export default function Sidebar(props: SidebarProps) {
 				</form>
 
 				<div className="footer">
-					{sidebarFooterButtons.map((button, index) => (
-						<Button
-							key={index}
-							variant="secondary"
-						>
-							{button.text}
-						</Button>
-					))}
+					<Button
+						variant="secondary"
+						onClick={handleMarkAllCompleted}
+					>
+						Mark All Completed
+					</Button>
+
+					<Button
+						variant="secondary"
+						onClick={handleDeleteSelected}
+					>
+						Delete Selected
+					</Button>
+
+					<Button
+						variant="danger"
+						onClick={handleClearList}
+					>
+						Clear List
+					</Button>
 				</div>
 			</div>
 		</aside>

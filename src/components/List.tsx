@@ -1,6 +1,3 @@
-/* Dependencies */
-import { useEffect, useState } from "react";
-
 /* Types */
 import { ListItemType, ListItemProps, ListProps } from "@app/types/components";
 
@@ -45,7 +42,7 @@ function ListItem(props: ListItemProps) {
 				id={item.name}
 				type="checkbox"
 				name={item.name}
-				defaultChecked={item.checked}
+				checked={item.checked}
 				onChange={handleCheckboxChange}
 			/>
 		</div>
